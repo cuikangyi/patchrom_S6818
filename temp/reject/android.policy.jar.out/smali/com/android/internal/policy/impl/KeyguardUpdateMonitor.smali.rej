@@ -1,0 +1,20 @@
+*** KeyguardUpdateMonitor.smali	2015-12-08 00:13:56.895231907 +0800
+--- KeyguardUpdateMonitor.smali	2015-12-08 00:11:58.679234395 +0800
+***************
+*** 10,16 ****
+          Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallbackImpl;,
+          Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallback;,
+          Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;,
+!         Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;
+      }
+  .end annotation
+  
+--- 10,17 ----
+          Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallbackImpl;,
+          Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$InfoCallback;,
+          Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$BatteryStatus;,
+!         Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$SimArgs;,
+!         Lcom/android/internal/policy/impl/KeyguardUpdateMonitor$Injector;
+      }
+  .end annotation
+  

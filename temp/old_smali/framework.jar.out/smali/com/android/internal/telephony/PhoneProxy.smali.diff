@@ -1,0 +1,31 @@
+*** ./smali/com/android/internal/telephony/PhoneProxy.smali	2015-12-08 00:15:33.215229880 +0800
+--- /data/patchrom_jb/s6818/temp/new_smali/framework.jar.out/./smali/com/android/internal/telephony/PhoneProxy.smali	2015-12-08 00:13:40.387232255 +0800
+***************
+*** 83,95 ****
+  
+      iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccSmsInterfaceManagerProxy:Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
+  
+!     new-instance v0, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
+  
+      invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+  
+      move-result-object v1
+  
+!     invoke-direct {v0, v1}, Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;-><init>(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;)V
+  
+      iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccPhoneBookInterfaceManagerProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
+  
+--- 83,95 ----
+  
+      iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccSmsInterfaceManagerProxy:Lcom/android/internal/telephony/IccSmsInterfaceManagerProxy;
+  
+!     new-instance v0, Lcom/android/internal/telephony/MiuiIccPhoneBookInterfaceManagerProxy;
+  
+      invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+  
+      move-result-object v1
+  
+!     invoke-direct {v0, v1}, Lcom/android/internal/telephony/MiuiIccPhoneBookInterfaceManagerProxy;-><init>(Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;)V
+  
+      iput-object v0, p0, Lcom/android/internal/telephony/PhoneProxy;->mIccPhoneBookInterfaceManagerProxy:Lcom/android/internal/telephony/IccPhoneBookInterfaceManagerProxy;
+  

@@ -1,0 +1,17 @@
+*** ./smali/com/android/server/am/BroadcastQueue.smali	2015-12-08 00:15:37.391229792 +0800
+--- /data/patchrom_jb/s6818/temp/new_smali/services.jar.out/./smali/com/android/server/am/BroadcastQueue.smali	2015-12-08 00:13:44.467232169 +0800
+***************
+*** 3828,3833 ****
+--- 3828,3839 ----
+  
+      iput-object v0, v1, Lcom/android/server/am/BroadcastQueue;->mPendingBroadcast:Lcom/android/server/am/BroadcastRecord;
+  
++     iget-object v0, v0, Lcom/android/server/am/BroadcastRecord;->curApp:Lcom/android/server/am/ProcessRecord;
++ 
++     const/4 v1, 0x1
++ 
++     iput-boolean v1, v0, Lcom/android/server/am/ProcessRecord;->startedViaBroadcast:Z
++ 
+      move/from16 v0, v28
+  
+      move-object/from16 v1, p0

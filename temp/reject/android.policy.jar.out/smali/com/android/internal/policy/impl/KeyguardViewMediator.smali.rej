@@ -1,0 +1,42 @@
+*** KeyguardViewMediator.smali	2015-12-08 00:13:55.723231932 +0800
+--- KeyguardViewMediator.smali	2015-12-08 00:11:57.511234420 +0800
+***************
+*** 1319,1324 ****
+      return-void
+  
+      :cond_0
+      iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator;->mKeyguardViewManager:Lcom/android/internal/policy/impl/KeyguardViewManager;
+  
+      invoke-virtual {v0}, Lcom/android/internal/policy/impl/KeyguardViewManager;->show()V
+--- 1327,1336 ----
+      return-void
+  
+      :cond_0
++     const/4 v0, 0x1
++ 
++     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->playSounds(Z)V
++ 
+      iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator;->mKeyguardViewManager:Lcom/android/internal/policy/impl/KeyguardViewManager;
+  
+      invoke-virtual {v0}, Lcom/android/internal/policy/impl/KeyguardViewManager;->show()V
+***************
+*** 1348,1358 ****
+      .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+  
+      :goto_1
+-     const/4 v0, 0x1
+- 
+      :try_start_2
+-     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/KeyguardViewMediator;->playSounds(Z)V
+- 
+      iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator;->mShowKeyguardWakeLock:Landroid/os/PowerManager$WakeLock;
+  
+      invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+--- 1360,1366 ----
+      .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+  
+      :goto_1
+      :try_start_2
+      iget-object v0, p0, Lcom/android/internal/policy/impl/KeyguardViewMediator;->mShowKeyguardWakeLock:Landroid/os/PowerManager$WakeLock;
+  
+      invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V

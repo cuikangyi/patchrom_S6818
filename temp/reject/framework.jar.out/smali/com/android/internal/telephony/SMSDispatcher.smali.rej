@@ -1,0 +1,23 @@
+*** SMSDispatcher.smali	2015-12-08 00:15:30.075229946 +0800
+--- SMSDispatcher.smali	2015-12-08 00:13:37.303232320 +0800
+***************
+*** 898,904 ****
+  
+      move-result-object v1
+  
+!     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([B)I
+  
+      move-result v8
+  
+--- 899,909 ----
+  
+      move-result-object v1
+  
+!     invoke-virtual {p1}, Lcom/android/internal/telephony/SmsMessageBase;->getOriginatingAddress()Ljava/lang/String;
+! 
+!     move-result-object v2
+! 
+!     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/WapPushOverSms;->dispatchWapPdu([BLjava/lang/String;)I
+  
+      move-result v8
+  

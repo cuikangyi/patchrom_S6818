@@ -1,0 +1,19 @@
+*** WebViewClassic.smali	2015-12-08 00:14:01.691231806 +0800
+--- WebViewClassic.smali	2015-12-08 00:12:03.627234291 +0800
+***************
+*** 20970,20976 ****
+      goto :goto_0
+  .end method
+  
+! .method sendOurVisibleRect()Landroid/graphics/Rect;
+      .locals 4
+  
+      .prologue
+--- 20988,20994 ----
+      goto :goto_0
+  .end method
+  
+! .method public sendOurVisibleRect()Landroid/graphics/Rect;
+      .locals 4
+  
+      .prologue

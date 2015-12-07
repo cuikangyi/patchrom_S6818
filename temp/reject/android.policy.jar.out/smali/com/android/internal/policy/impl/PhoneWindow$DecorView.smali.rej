@@ -1,0 +1,23 @@
+*** PhoneWindow$DecorView.smali	2015-12-08 00:13:56.255231921 +0800
+--- PhoneWindow$DecorView.smali	2015-12-08 00:11:58.015234409 +0800
+***************
+*** 2232,2240 ****
+      invoke-virtual {v5}, Landroid/view/ActionMode;->finish()V
+  
+      :cond_0
+!     new-instance v4, Lcom/android/internal/policy/impl/PhoneWindow$DecorView$ActionModeCallbackWrapper;
+  
+!     invoke-direct {v4, p0, p1}, Lcom/android/internal/policy/impl/PhoneWindow$DecorView$ActionModeCallbackWrapper;-><init>(Lcom/android/internal/policy/impl/PhoneWindow$DecorView;Landroid/view/ActionMode$Callback;)V
+  
+      .local v4, wrappedCallback:Landroid/view/ActionMode$Callback;
+      const/4 v2, 0x0
+--- 2310,2318 ----
+      invoke-virtual {v5}, Landroid/view/ActionMode;->finish()V
+  
+      :cond_0
+!     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->miuiCreateActionModeCallbackWrapper(Landroid/view/ActionMode$Callback;)Lcom/android/internal/policy/impl/PhoneWindow$DecorView$ActionModeCallbackWrapper;
+  
+!     move-result-object v4
+  
+      .local v4, wrappedCallback:Landroid/view/ActionMode$Callback;
+      const/4 v2, 0x0

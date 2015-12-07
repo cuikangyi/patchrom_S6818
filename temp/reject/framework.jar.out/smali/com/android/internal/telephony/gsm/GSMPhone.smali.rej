@@ -1,0 +1,19 @@
+*** GSMPhone.smali	2015-12-08 00:15:32.091229904 +0800
+--- GSMPhone.smali	2015-12-08 00:13:39.287232278 +0800
+***************
+*** 1778,1784 ****
+  
+      move-result-object v0
+  
+!     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mSimPhoneBookIntManager:Lcom/android/internal/telephony/gsm/SimPhoneBookInterfaceManager;
+  
+      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  
+--- 1787,1793 ----
+  
+      move-result-object v0
+  
+!     iget-object v1, p0, Lcom/android/internal/telephony/gsm/GSMPhone;->mSimPhoneBookIntManager:Lcom/android/internal/telephony/IccPhoneBookInterfaceManager;
+  
+      invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  
