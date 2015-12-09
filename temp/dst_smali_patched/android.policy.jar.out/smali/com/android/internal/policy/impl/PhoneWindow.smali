@@ -1628,6 +1628,11 @@
     invoke-virtual {v13}, Lcom/android/internal/widget/ActionBarView;->initIndeterminateProgress()V
 
     :cond_b
+
+    iget-object v13, v0, Lcom/android/internal/policy/impl/PhoneWindow;->mActionBar:Lcom/android/internal/widget/ActionBarView;
+
+    invoke-static {v0, v13}, Lcom/android/internal/policy/impl/PhoneWindow$Injector;->handleStartingWindow(Lcom/android/internal/policy/impl/PhoneWindow;Lcom/android/internal/widget/ActionBarView;)V
+
     const/4 v8, 0x0
 
     .local v8, splitActionBar:Z
@@ -4574,7 +4579,7 @@
 
     move/from16 v1, v19
 
-    invoke-virtual {v0, v1}, Landroid/view/Window;->clearFlags(I)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindow;->addFlags(I)V
 
     goto/16 :goto_6
 
@@ -4725,14 +4730,25 @@
 
     if-eqz v19, :cond_26
 
-    const v10, 0x10900d9
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindow;->getContext()Landroid/content/Context;
 
+    move-result-object v19
+
+    invoke-static/range {v19 .. v19}, Lcom/android/internal/policy/impl/PhoneWindow$Injector;->getActionBarOverlayResourceId(Landroid/content/Context;)I
+
+    move-result v10
     .restart local v10       #layoutResource:I
     goto/16 :goto_8
 
     .end local v10           #layoutResource:I
     :cond_26
-    const v10, 0x10900d8
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindow;->getContext()Landroid/content/Context;
+
+    move-result-object v19
+
+    invoke-static/range {v19 .. v19}, Lcom/android/internal/policy/impl/PhoneWindow$Injector;->getActionBarResourceId(Landroid/content/Context;)I
+
+    move-result v10
 
     .restart local v10       #layoutResource:I
     goto/16 :goto_8

@@ -3249,10 +3249,10 @@
     invoke-virtual {v9}, Landroid/view/ActionMode;->finish()V
 
     :cond_0
-    new-instance v8, Lcom/android/internal/policy/impl/PhoneWindow$DecorView$ActionModeCallbackWrapper;
+    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->miuiCreateActionModeCallbackWrapper(Landroid/view/ActionMode$Callback;)Lcom/android/internal/policy/impl/PhoneWindow$DecorView$ActionModeCallbackWrapper;
 
-    invoke-direct {v8, p0, p1}, Lcom/android/internal/policy/impl/PhoneWindow$DecorView$ActionModeCallbackWrapper;-><init>(Lcom/android/internal/policy/impl/PhoneWindow$DecorView;Landroid/view/ActionMode$Callback;)V
-
+    move-result-object v8
+    
     .local v8, wrappedCallback:Landroid/view/ActionMode$Callback;
     const/4 v3, 0x0
 
