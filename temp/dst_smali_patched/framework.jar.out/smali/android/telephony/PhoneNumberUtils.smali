@@ -4991,14 +4991,14 @@
 
     if-ge v6, v11, :cond_c
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-static {p0}, Landroid/telephony/PhoneNumberUtils$Injector;->getEffectiveLength(Ljava/lang/String;)I
 
     move-result v11
 
     sub-int v2, v11, v7
 
     .local v2, effectiveALen:I
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    invoke-static {p1}, Landroid/telephony/PhoneNumberUtils$Injector;->getEffectiveLength(Ljava/lang/String;)I
 
     move-result v11
 

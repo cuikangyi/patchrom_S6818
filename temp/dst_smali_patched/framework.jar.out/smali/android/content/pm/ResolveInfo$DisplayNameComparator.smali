@@ -93,6 +93,11 @@
     iget-object v6, v7, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
 
     :cond_1
+    iget-object v7, p0, Landroid/content/pm/ResolveInfo$DisplayNameComparator;->sCollator:Ljava/text/Collator;
+    invoke-static {v7, p1, v5, p2, v6}, Landroid/content/pm/ResolveInfo$Injector;->compare(Ljava/text/Collator;Landroid/content/pm/ResolveInfo;Ljava/lang/CharSequence;Landroid/content/pm/ResolveInfo;Ljava/lang/CharSequence;)I
+    move-result v7
+    goto :goto_2
+
     const/4 v3, 0x0
 
     .local v3, ia:I

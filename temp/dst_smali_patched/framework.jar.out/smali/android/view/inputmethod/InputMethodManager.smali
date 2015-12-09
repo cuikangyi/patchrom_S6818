@@ -3571,6 +3571,9 @@
     :cond_8
     move-object/from16 v0, p0
 
+    invoke-static {v0, v13}, Landroid/view/inputmethod/InputMethodManager$Injector;->handleBindLose(Landroid/view/inputmethod/InputMethodManager;Lcom/android/internal/view/InputBindResult;)V
+
+
     iget-object v1, v0, Landroid/view/inputmethod/InputMethodManager;->mCurMethod:Lcom/android/internal/view/IInputMethodSession;
 
     if-eqz v1, :cond_9

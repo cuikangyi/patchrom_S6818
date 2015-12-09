@@ -2820,6 +2820,19 @@
 
     move-result v42
 
+    move/from16 v0, v42
+
+    move-object/from16 v1, p0
+
+    iput-boolean v0, v1, Landroid/view/View;->mHapticEnabledExplicitly:Z
+
+    const/16 v42, 0x1
+
+    move/from16 v0, v42
+
+    invoke-virtual {v6, v7, v0}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v42
     if-nez v42, :cond_0
 
     const v42, -0x10000001

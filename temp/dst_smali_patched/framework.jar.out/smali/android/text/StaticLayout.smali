@@ -2736,6 +2736,23 @@
     move/from16 v44, v105
 
     :cond_e
+
+    #start
+    move/from16 v0, v97
+
+    move-object/from16 v1, v29
+
+    move/from16 v2, v110
+
+    move/from16 v3, v124
+
+    move/from16 v4, v31
+
+    invoke-static {v0, v1, v2, v3, v4}, Landroid/text/StaticLayout$Injector;->validateCJKCharAsSpace(C[CIII)C
+
+    move-result v97
+    #end
+
     const/16 v5, 0x200b
 
     move/from16 v0, v97

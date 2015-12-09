@@ -23,6 +23,8 @@
 
 .field public static final FILE_TYPE_AMR:I = 0x4
 
+.field public static final FILE_TYPE_APE:I = 0x3e9
+
 .field public static final FILE_TYPE_ASF:I = 0x23
 
 .field public static final FILE_TYPE_AVI:I = 0x26
@@ -129,6 +131,8 @@
 
 .field private static final FIRST_DRM_FILE_TYPE:I = 0x46
 
+.field private static final FIRST_FFMPEG_AUDIO_FILE_TYPE:I = 0x3e9
+
 .field private static final FIRST_IMAGE_FILE_TYPE:I = 0x32
 
 .field private static final FIRST_MIDI_FILE_TYPE:I = 0x14
@@ -147,6 +151,7 @@
 
 .field private static final LAST_DRM_FILE_TYPE:I = 0x48
 
+.field private static final LAST_FFMPEG_AUDIO_FILE_TYPE:I = 0x3e9
 .field private static final LAST_IMAGE_FILE_TYPE:I = 0x37
 
 .field private static final LAST_MIDI_FILE_TYPE:I = 0x16

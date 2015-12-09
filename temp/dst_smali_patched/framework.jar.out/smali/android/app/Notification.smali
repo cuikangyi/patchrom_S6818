@@ -344,12 +344,12 @@
 
     if-eqz v5, :cond_b
 
-    new-instance v5, Ljava/util/HashMap;
+    new-instance v5, Lmiui/app/ExtraNotification;
 
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v5}, Lmiui/app/ExtraNotification;-><init>()V
 
     :goto_0
-    iput-object v5, p0, Landroid/app/Notification;->stringNamesMap:Ljava/util/Map;
+    iput-object v5, p0, Landroid/app/Notification;->extraNotification:Lmiui/app/ExtraNotification;
 
     const/4 v5, -0x1
 
@@ -997,6 +997,12 @@
     iget-wide v7, p0, Landroid/app/Notification;->threadId:J
 
     iput-wide v7, v2, Landroid/app/Notification;->threadId:J
+
+    iget-object v7, v2, Landroid/app/Notification;->extraNotification:Lmiui/app/ExtraNotification;
+
+    iget-object v8, p0, Landroid/app/Notification;->extraNotification:Lmiui/app/ExtraNotification;
+
+    invoke-virtual {v7, v8}, Lmiui/app/ExtraNotification;->setTo(Lmiui/app/ExtraNotification;)V
 
     return-object v2
 .end method

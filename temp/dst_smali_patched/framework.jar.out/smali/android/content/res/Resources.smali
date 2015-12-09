@@ -6035,17 +6035,13 @@
 
     .restart local v6       #dr:Landroid/graphics/drawable/Drawable;
     :cond_5
-    sget-object v17, Landroid/content/res/Resources;->sPreloadedDrawables:Landroid/util/LongSparseArray;
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, v17
+    move/from16 v1, p2
 
-    invoke-virtual {v0, v13, v14}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v0, v13, v14, v1}, Landroid/content/res/Resources;->getPreloadedDrawable(JI)Landroid/graphics/drawable/Drawable$ConstantState;
 
-    move-result-object v17
-
-    check-cast v17, Landroid/graphics/drawable/Drawable$ConstantState;
-
-    move-object/from16 v5, v17
+    move-result-object v5
 
     goto :goto_2
 
@@ -6243,6 +6239,9 @@
     move-result-object v11
 
     .local v11, is:Ljava/io/InputStream;
+
+    invoke-static/range {p2 .. p2}, Landroid/content/res/Resources$Injector;->setDrawableId(I)V
+
     const/16 v17, 0x0
 
     move-object/from16 v0, p0
@@ -6251,7 +6250,7 @@
 
     move-object/from16 v2, v17
 
-    invoke-static {v0, v1, v11, v9, v2}, Landroid/graphics/drawable/Drawable;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1, v11, v9, v2}, Landroid/content/res/Resources$Injector;->createFromResourceStream(Landroid/content/res/Resources;Landroid/util/TypedValue;Ljava/io/InputStream;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 

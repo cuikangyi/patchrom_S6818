@@ -667,6 +667,11 @@
 
     move-result-object v2
 
+    invoke-static {v2}, Lmiui/content/res/IconCustomizer;->generateIconStyleDrawable(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/BitmapDrawable;
+
+    move-result-object v2
+
+
     :cond_0
     if-eqz v2, :cond_1
 

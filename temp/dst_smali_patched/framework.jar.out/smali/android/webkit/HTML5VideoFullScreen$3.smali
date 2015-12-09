@@ -24,13 +24,13 @@
 # direct methods
 .method constructor <init>(Landroid/webkit/HTML5VideoFullScreen;)V
     .locals 0
+    .parameter
 
     .prologue
     iput-object p1, p0, Landroid/webkit/HTML5VideoFullScreen$3;->this$0:Landroid/webkit/HTML5VideoFullScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :cond_miui_2
     return-void
 .end method
 

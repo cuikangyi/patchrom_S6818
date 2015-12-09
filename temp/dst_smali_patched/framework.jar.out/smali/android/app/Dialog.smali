@@ -2086,10 +2086,9 @@
 
     if-eqz v4, :cond_4
 
-    new-instance v4, Lcom/android/internal/app/ActionBarImpl;
+    invoke-static {p0}, Landroid/app/Dialog$Injector;->generateActionBar(Landroid/app/Dialog;)Lcom/android/internal/app/ActionBarImpl;
 
-    invoke-direct {v4, p0}, Lcom/android/internal/app/ActionBarImpl;-><init>(Landroid/app/Dialog;)V
-
+    move-result-object v4
     iput-object v4, p0, Landroid/app/Dialog;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
 
     :cond_4
