@@ -27,7 +27,8 @@
         Lcom/android/server/am/ActivityManagerService$Identity;,
         Lcom/android/server/am/ActivityManagerService$ForegroundToken;,
         Lcom/android/server/am/ActivityManagerService$PendingActivityLaunch;,
-        Lcom/android/server/am/ActivityManagerService$appProcess;
+        Lcom/android/server/am/ActivityManagerService$appProcess;,
+        Lcom/android/server/am/ActivityManagerService$Injector;
     }
 .end annotation
 
@@ -1004,7 +1005,10 @@
 
 .method private constructor <init>()V
     .locals 11
-
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+    
     .prologue
     const/4 v10, 0x5
 
@@ -1607,6 +1611,8 @@
     .local v2, systemDir:Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
+    invoke-static {}, Lcom/android/server/am/ExtraActivityManagerService;->init()V
+    
     new-instance v3, Lcom/android/server/am/BatteryStatsService;
 
     new-instance v6, Ljava/io/File;
@@ -11266,6 +11272,12 @@
     const-string v3, "app"
 
     move-object/from16 v0, p1
+
+    invoke-virtual {v12, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v3, "crash"
+
+    move-object/from16 v0, p2
 
     invoke-virtual {v12, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -65444,7 +65456,13 @@
     throw v0
 
     :cond_0
-    invoke-direct {p0, p2, p3}, Lcom/android/server/am/ActivityManagerService;->checkRunningCompatibility(Landroid/content/Intent;Ljava/lang/String;)Z
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object/from16 v2, p3
+
+    invoke-direct {v0, v1, v2}, Lcom/android/server/am/ActivityManagerService;->checkRunningCompatibility(Landroid/content/Intent;Ljava/lang/String;)Z
 
     move-result v8
 
@@ -69997,6 +70015,12 @@
     move-object/from16 v2, p0
 
     invoke-direct/range {v2 .. v16}, Lcom/android/server/am/ActivityManagerService;->broadcastIntentLocked(Lcom/android/server/am/ProcessRecord;Ljava/lang/String;Landroid/content/Intent;Ljava/lang/String;Landroid/content/IIntentReceiver;ILjava/lang/String;Landroid/os/Bundle;Ljava/lang/String;ZZIII)I
+
+    move/from16 v0, v23
+
+    move-object/from16 v1, v28
+
+    invoke-static {v0, v1}, Landroid/app/MiuiThemeHelper;->handleExtraConfigurationChangesForSystem(ILandroid/content/res/Configuration;)V
 
     and-int/lit8 v2, v26, 0x4
 

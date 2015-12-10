@@ -11,7 +11,8 @@
         Lcom/android/server/ConnectivityService$MyHandler;,
         Lcom/android/server/ConnectivityService$FeatureUser;,
         Lcom/android/server/ConnectivityService$RouteAttributes;,
-        Lcom/android/server/ConnectivityService$RadioAttributes;
+        Lcom/android/server/ConnectivityService$RadioAttributes;,
+        Lcom/android/server/ConnectivityService$Injector;
     }
 .end annotation
 
@@ -416,39 +417,8 @@
 
     invoke-direct {v0, v2}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
 
-    const/16 v2, 0x13
+    invoke-static/range {p1 .. p1}, Lcom/miui/server/FirewallService;->setupService(Landroid/content/Context;)V
 
-    new-array v2, v2, [Lcom/android/server/ConnectivityService$RouteAttributes;
-
-    move-object/from16 v0, p0
-
-    iput-object v2, v0, Lcom/android/server/ConnectivityService;->mRouteAttributes:[Lcom/android/server/ConnectivityService$RouteAttributes;
-
-    const/4 v14, 0x0
-
-    .local v14, i:I
-    :goto_0
-    const/16 v2, 0x13
-
-    if-ge v14, v2, :cond_0
-
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Lcom/android/server/ConnectivityService;->mRouteAttributes:[Lcom/android/server/ConnectivityService$RouteAttributes;
-
-    new-instance v3, Lcom/android/server/ConnectivityService$RouteAttributes;
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v3, v0}, Lcom/android/server/ConnectivityService$RouteAttributes;-><init>(Lcom/android/server/ConnectivityService;)V
-
-    aput-object v3, v2, v14
-
-    add-int/lit8 v14, v14, 0x1
-
-    goto :goto_0
-
-    :cond_0
     new-instance v13, Landroid/os/HandlerThread;
 
     const-string v2, "ConnectivityServiceThread"
@@ -8316,6 +8286,11 @@
     const/16 v11, 0xc
 
     :cond_4
+
+    move-object/from16 v0, p1
+
+    invoke-static {v0, v11}, Lcom/android/server/ConnectivityService$Injector;->stopUsingNetworkFeature(Lcom/android/server/ConnectivityService$FeatureUser;I)V
+
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/android/server/ConnectivityService;->mNetTrackers:[Landroid/net/NetworkStateTracker;

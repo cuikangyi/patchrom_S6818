@@ -7857,7 +7857,7 @@
 
     const-string v2, "fullback"
 
-    invoke-virtual {p0, v3, v2}, Lcom/android/server/BackupManagerService;->startConfirmationUi(ILjava/lang/String;)Z
+    invoke-static {p0, v3, v2}, Lcom/android/server/BackupManagerService$Injector;->startConfirmationUi(Lcom/android/server/BackupManagerService;ILjava/lang/String;)Z
 
     move-result v2
 
@@ -7901,7 +7901,7 @@
 
     invoke-virtual {v2, v4, v5, v6}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    invoke-virtual {p0, v3, v1}, Lcom/android/server/BackupManagerService;->startConfirmationTimeout(ILcom/android/server/BackupManagerService$FullParams;)V
+    invoke-static {p0, v3, v1}, Lcom/android/server/BackupManagerService$Injector;->startConfirmationTimeout(Lcom/android/server/BackupManagerService;ILcom/android/server/BackupManagerService$FullParams;)V
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_1
 
@@ -8206,7 +8206,7 @@
 
     const-string v0, "fullrest"
 
-    invoke-virtual {p0, v1, v0}, Lcom/android/server/BackupManagerService;->startConfirmationUi(ILjava/lang/String;)Z
+    invoke-static {p0, v1, v0}, Lcom/android/server/BackupManagerService$Injector;->startConfirmationUi(Lcom/android/server/BackupManagerService;ILjava/lang/String;)Z
 
     move-result v0
 
@@ -8250,7 +8250,7 @@
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/os/PowerManager;->userActivity(JZ)V
 
-    invoke-virtual {p0, v1, v9}, Lcom/android/server/BackupManagerService;->startConfirmationTimeout(ILcom/android/server/BackupManagerService$FullParams;)V
+    invoke-static {p0, v1, v9}, Lcom/android/server/BackupManagerService$Injector;->startConfirmationTimeout(Lcom/android/server/BackupManagerService;ILcom/android/server/BackupManagerService$FullParams;)V
     :try_end_d
     .catchall {:try_start_d .. :try_end_d} :catchall_1
 

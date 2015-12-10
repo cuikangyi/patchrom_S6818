@@ -926,6 +926,16 @@
 
     iput-object v6, p0, Lcom/android/server/wm/WindowState;->mInputWindowHandle:Lcom/android/server/input/InputWindowHandle;
 
+    iget-object v5, p0, Lcom/android/server/wm/WindowState;->mSession:Lcom/android/server/wm/Session;
+
+    iget v5, v5, Lcom/android/server/wm/Session;->mUid:I
+
+    invoke-static {v5}, Lcom/android/server/wm/WindowManagerService$Injector;->isFloatingWindowAllowed(I)Z
+
+    move-result v5
+
+    iput-boolean v5, p0, Lcom/android/server/wm/WindowState;->mFloatingWindowAllowed:Z
+
     goto/16 :goto_8
 
     .restart local v4       #parent:Lcom/android/server/wm/WindowToken;
