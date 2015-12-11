@@ -1,0 +1,3 @@
+post-build=samsung/nevis3gzm/nevis3gcmcc:4.1.2/JZO54K/S6818ZMAMF8:user/release-keys
+post-timestamp=1372562750
+pre-device=nevis3gcmcc
